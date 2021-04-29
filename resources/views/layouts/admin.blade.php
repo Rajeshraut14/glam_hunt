@@ -55,7 +55,7 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{{ url('/admin/dashboard') }}">
                         <!-- Logo icon -->
                         <b class="logo-icon ps-2">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -70,6 +70,7 @@
                             <img src="../../assets/images/logo-text.png" alt="homepage" class="light-logo" />
 
                         </span>
+                        </a>
                         <!-- Logo icon -->
                         <!-- <b class="logo-icon"> -->
                         <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -78,7 +79,7 @@
 
                         <!-- </b> -->
                         <!--End Logo icon -->
-                    </a>
+                    
                     <!-- ============================================================== -->
                     <!-- End Logo -->
                     <!-- ============================================================== -->
@@ -103,16 +104,9 @@
                         <!-- create new -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="d-none d-md-block">Create New <i class="fa fa-angle-down"></i></span>
-                                <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown"  href="{{ url('/registers') }}">Add Form</a>
+                            
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
                         </li>
                         <!-- ============================================================== -->
                         <!-- Search -->
@@ -257,40 +251,14 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="pt-4">
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                                href="{{ url('/admin/dashboard') }}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="charts.html" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span
-                                    class="hide-menu">Charts</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="widgets.html" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span
-                                    class="hide-menu">Widgets</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="tables.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
+                                href="{{ url('/table') }}" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
                                     class="hide-menu">Tables</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span
-                                    class="hide-menu">Full Width</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
-                                href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span
-                                    class="hide-menu">Forms </span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="form-basic.html" class="sidebar-link"><i
-                                            class="mdi mdi-note-outline"></i><span class="hide-menu"> Form Basic
+                                                        <li class="sidebar-item"><a href="{{ url('/registers') }}" class="sidebar-link"><i
+                                            class="mdi mdi-note-plus"></i><span class="hide-menu"> Add Form
                                         </span></a></li>
-                                <li class="sidebar-item"><a href="form-wizard.html" class="sidebar-link"><i
-                                            class="mdi mdi-note-plus"></i><span class="hide-menu"> Form Wizard
-                                        </span></a></li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-buttons.html" aria-expanded="false"><i
-                                    class="mdi mdi-relative-scale"></i><span class="hide-menu">Buttons</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-elements.html" aria-expanded="false"><i class="mdi mdi-pencil"></i><span
-                                    class="hide-menu">Elements</span></a></li>
-                        
-                        
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -319,8 +287,8 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                All Rights Reserved by Talent-Admin. Designed and Developed by <a
-                    href="https://www.wrappixel.com">Dixinfotech</a>.
+                All Rights Reserved by Talent-Admin. Designed and Developed by 
+                <a href="https://www.wrappixel.com">Dixinfotech</a>
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
@@ -346,7 +314,7 @@
     
     <script src="{{ asset('assets/extra-libs/sparkline/sparkline.js') }}" defer></script>
     <!--Wave Effects -->
-    <
+    
         <script src="{{ asset('dist/js/waves.js') }}" defer></script>
     <!--Menu sidebar -->
     
