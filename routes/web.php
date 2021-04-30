@@ -56,13 +56,32 @@ Route::get('/skilldelete/{id}', 'SkillController@skilldelete')->name('skilldelet
 
 });
 
+Route::group(['prefix' => 'admin', 'as'=>'admin.'], function()
+{
+Route::get('/roleregister', 'RoleController@registerrole')->name('roleregister');
+Route::POST('/submitrole', 'RoleController@submitrole')->name('roles');
 
+Route::get('/role', 'RoleController@roleview')->name('role');
 
+Route::get('/roleUpdate/{id}', 'RoleController@roleedits')->name('roleupdate');
+Route::post('/Submitrole/{id}', 'RoleController@roleupdates')->name('roleedit');
 
+Route::get('/roledelete/{id}', 'RoleController@roledelete')->name('roledelete');
 
+});
 
+Route::group(['prefix' => 'admin', 'as'=>'admin.'], function()
+{
+Route::get('/user', 'UserController@registeruser')->name('user');
+Route::POST('/submituser', 'UserController@submituser')->name('users');
 
+Route::get('/user/view', 'UserController@userview')->name('userss');
 
+Route::get('/userUpdate/{id}', 'UserController@useredits')->name('userupdate');
+Route::post('/Submituser/{id}', 'UserController@userupdates')->name('useredit');
+
+Route::get('/userdelete/{id}', 'UserController@userdelete')->name('userdelete');
+});
 
 
 

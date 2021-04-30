@@ -27,7 +27,7 @@
 <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Basic Datatable</h5>
-                            <a style="margin-left:1000px"  href="{{route('admin.skill')}}" class="btn btn-success">Add</a>
+                            <a style="margin-left:1000px"  href="{{route('admin.roleregister')}}" class="btn btn-success">Add</a>
                                 <div class="table-responsive">
                                     <table id="zero_config" class="table table-striped table-bordered">
                                         <thead>
@@ -36,26 +36,34 @@
 @endif
                                             <tr>
 
+ 
                                                 <th>Id</th>
-                                                <th>Skill Name</th>
+                                                <th>Name</th>
+                                                <th>status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($view as $item)
+                                            @foreach($data as $item)
                                             <tr>
                                                 <td>{{$item->id}}</td>
-                                                <td>{{$item->skill}}</td>
+                                                <td>{{$item->name}}</td>
+                                                <td>{{$item->status}}</td>
+                                            
+                                                <td><a class="btn btn-success" href="{{route('admin.roleupdate',$item->id)}}"><i class="fa fa-edit"></i></a>
 
-                                                <td><a class="btn btn-success" href="{{route('admin.skillupdate',$item->id)}}"><i class="fa fa-edit"></i></a>
-                                           <a class="btn btn-danger" href="{{route('admin.skilldelete',$item->id)}}"><i class="fa fa-trash-alt"></i></a></td> 
+                                                <a class="btn btn-danger" href="{{route('admin.roledelete',$item->id)}}"><i class="fas fa-trash-alt"></i></a></td>
+
                                              </tr>
                                             @endforeach 
                                         </tbody>
+
                                         <tfoot>
                                             <tr>
+
                                                 <th>Id</th>
-                                                <th>Skill Name</th>
+                                                <th>Name</th>
+                                                <th>status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>

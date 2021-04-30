@@ -1398,6 +1398,7 @@ if (!document.createElement('canvas').getContext) {
     this.code = this[s];
     this.message = s +': DOM Exception ' + this.code;
   }
+  
   var p = DOMException_.prototype = new Error;
   p.INDEX_SIZE_ERR = 1;
   p.DOMSTRING_SIZE_ERR = 2;

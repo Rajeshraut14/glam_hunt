@@ -55,7 +55,7 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href=" ">
+                    <a class="navbar-brand" href="{{ url('/admin/dashboard') }}">
                         <!-- Logo icon -->
                         <b class="logo-icon ps-2">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -230,7 +230,7 @@
                             </ul>
                         </li>
                         <!-- ============================================================== -->
-                        <!-- User profile and search -->
+                        <!-- User profile and search -->    
 
                         
                         <!-- ============================================================== -->
@@ -255,12 +255,20 @@
                                     class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{{route('admin.artist')}}" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
-                                    class="hide-menu">Tables</span></a></li>
+                                    class="hide-menu">Artist</span></a></li>
                                     
                                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{{route('admin.skillview')}}" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
                                     class="hide-menu">Skill</span></a></li>
-                                                        
+                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="{{route('admin.role')}}" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
+                                    class="hide-menu">Role</span></a></li>
+
+
+                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="{{route('admin.userss')}}" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
+                                    class="hide-menu">User</span></a></li>
+                                                     
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -329,6 +337,7 @@
     <!-- Charts js Files -->
 
 <script src="{{ asset('assets/libs/flot/excanvas.js') }}" defer></script>
+<script src="{{ asset('assets/libs/flot/formmuliple.js') }}" defer></script>
 <script src="{{ asset('assets/libs/flot/jquery.flot.js') }}" defer></script>
 <script src="{{ asset('assets/libs/flot/jqueryflot.pie.js') }}" defer></script>
 <script src="{{ asset('assets/libs/flot/jquery.flot.time.js') }}" defer></script>

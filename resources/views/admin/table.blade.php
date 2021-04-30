@@ -36,17 +36,15 @@
 @endif
                                             <tr>
 
-                                                <th>id</th>
+                                                <th>Id</th>
                                                 <th>Name</th>
-                                                <th>skill_id</th>
-                                                <th>first_name</th>
-                                                <th>last_name</th>
-                                                <th>email</th>
-                                                <th>phone</th>
-                                                <th>gender</th>
-                                                <th>password</th>
-                                                <th>edit</th>
-                                                <th>delete</th>
+                                                <th>Skill Id</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Email</th>
+                                                <th>Phone</th>
+                                                <th>Gender</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -60,27 +58,27 @@
                                                 <td>{{$item->email}}</td>
                                                 <td>{{$item->phone}}</td>
                                                 <td>{{$item->gender}}</td>
-                                                <td>{{$item->password}}</td>
-                                                <td><a class="btn btn-success" href="{{route('admin.update',$item->id)}}">Edit</a></td>
+                                            
+                                                <td><a class="btn btn-success" href="{{route('admin.update',$item->id)}}"><i class="fa fa-edit"></i></a>
 
-                                                <td><a class="btn btn-danger" href="{{route('admin.delete',$item->id)}}">Delete</a></td>
+                                                <a class="btn btn-danger" href="{{route('admin.delete',$item->id)}}"><i class="fas fa-trash-alt"></i></a></td>
 
                                              </tr>
                                             @endforeach 
                                         </tbody>
+
                                         <tfoot>
                                             <tr>
-                                                <th>id</th>
+
+                                                <th>Id</th>
                                                 <th>Name</th>
-                                                <th>skill_id</th>
-                                                <th>first_name</th>
-                                                <th>last_name</th>
-                                                <th>email</th>
-                                                <th>phone</th>
-                                                <th>gender</th>
-                                                <th>password</th>
-                                                <th>edit</th>
-                                                <th>delete</th>
+                                                <th>Skill Id</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Email</th>
+                                                <th>Phone</th>
+                                                <th>Gender</th>
+                                                <th>Action</th>
                                             </tr>
                                         </tfoot>
                                     </table>

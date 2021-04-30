@@ -20,42 +20,17 @@
             </div><div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <form class="form-horizontal" action="{{route('admin.save')}}" method="POST">
+                            <form class="form-horizontal" action="{{route('admin.users')}}" method="POST">
                                 @csrf
                                 <div class="card-body">
                                     <h4 class="card-title">Personal Info</h4>
                                     
                                     <div class="form-group row">
                                         <label for="fname"
-                                            class="col-sm-3 text-end control-label col-form-label">Username</label>
+                                            class="col-sm-3 text-end control-label col-form-label">Name</label>
                                         <div class="col-sm-9">
-                                            <input type="text"  name="uusername" class="form-control" id="email"
-                                                placeholder="Username">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="form-group row">
-                                        <label for="fname"
-                                            class="col-sm-3 text-end control-label col-form-label">Skill</label>
-                                        <div class="col-sm-9">
-                                            <input type="text"  name="uskill" class="form-control" id="fname"
-                                                placeholder="Skill">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="fname"
-                                            class="col-sm-3 text-end control-label col-form-label">First Name</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="ufirst" class="form-control" id="fname"
+                                            <input type="text" name="uname" class="form-control" id="fname"
                                                 placeholder="First Name ">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="lname" class="col-sm-3 text-end control-label col-form-label">Last
-                                            Name</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="ulast" class="form-control" id="lname"
-                                                placeholder="Last Name ">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -68,24 +43,10 @@
                                     </div>
                                     <div class="form-group row">
                                         <label for="phone1"
-                                            class="col-sm-3 text-end control-label col-form-label">Phone</label>
+                                            class="col-sm-3 text-end control-label col-form-label">Role Id</label>
                                         <div class="col-sm-9">
-                                            <input type="number" name="uphone" class="form-control" id="phome"
+                                            <input type="number" name="urole" class="form-control" id="phome"
                                                 placeholder="Phone">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="cono1"
-                                            class="col-sm-3 text-end control-label col-form-label">Gender</label>
-                                        <div class="col-sm-9">
-                                            <select   name="ugender" class="form-control" id="cono1"
-                                                placeholder="Gender"> 
-                                                <option value="#">--Gender--</option>
-                                                <option value="male">Male</option>
-                                                <option value="female">Female</option>
-                                                <option value="transgender">Transgender</option>
- 
-                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">

@@ -29,7 +29,7 @@ class SkillController extends Controller
 	$emp->save();
 	
 	
-   return redirect('admin/skill')->with('success','successfully'); 
+   return redirect('admin/skillview')->with('success','successfully'); 
 	}
 	public function skillview(){
 
