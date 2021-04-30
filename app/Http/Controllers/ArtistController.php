@@ -51,7 +51,7 @@ public function view(){
 	$emp->save();
 	
 	
-   return redirect('admin/dashboard')->with('success','successfully'); 
+   return redirect('admin/artist')->with('success','successfully'); 
 	}
 
 public function  edits(Request $request){
@@ -75,7 +75,7 @@ public function updates(Request $request)
 		$user->password = bcrypt($request->upassword);
 		
 	if($user->save()){
-               	return redirect('/table')->with('success','update seccessfully');
+               	return redirect('/admin/artist')->with('success','update seccessfully');
 
 	}
 }
@@ -83,7 +83,7 @@ public function updates(Request $request)
 public function delete($id){
 
 	DB::delete('delete from artists where id = ?',[$id]);
-		return redirect('/table')->with('success','update seccessfully');
+		return redirect('/admin/artist')->with('success','update seccessfully');
 }
 	            
 }

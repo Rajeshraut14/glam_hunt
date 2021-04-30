@@ -27,7 +27,7 @@
 <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Basic Datatable</h5>
-                            <a style="margin-left:1000px"  href="{{route('admin.register')}}" class="btn btn-success">Add</a>
+                            <a style="margin-left:1000px"  href="{{route('admin.skill')}}" class="btn btn-success">Add</a>
                                 <div class="table-responsive">
                                     <table id="zero_config" class="table table-striped table-bordered">
                                         <thead>
@@ -37,48 +37,26 @@
                                             <tr>
 
                                                 <th>id</th>
-                                                <th>Name</th>
-                                                <th>skill_id</th>
-                                                <th>first_name</th>
-                                                <th>last_name</th>
-                                                <th>email</th>
-                                                <th>phone</th>
-                                                <th>gender</th>
-                                                <th>password</th>
+                                                <th>skill Name</th>
                                                 <th>edit</th>
                                                 <th>delete</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($data as $item)
+                                            @foreach($view as $item)
                                             <tr>
                                                 <td>{{$item->id}}</td>
-                                                <td>{{$item->username}}</td>
-                                                <td>{{$item->skill_id}}</td>
-                                                <td>{{$item->first_name}}</td>
-                                                <td>{{$item->last_name}}</td>
-                                                <td>{{$item->email}}</td>
-                                                <td>{{$item->phone}}</td>
-                                                <td>{{$item->gender}}</td>
-                                                <td>{{$item->password}}</td>
-                                                <td><a class="btn btn-success" href="{{route('admin.update',$item->id)}}">Edit</a></td>
+                                                <td>{{$item->skill}}</td>
 
-                                                <td><a class="btn btn-danger" href="{{route('admin.delete',$item->id)}}">Delete</a></td>
-
+                                                <td><a class="btn btn-success" href="{{route('admin.skillupdate',$item->id)}}">Edit</a></td>
+                                           <td><a class="btn btn-danger" href="{{route('admin.skilldelete',$item->id)}}">Delete</a></td> 
                                              </tr>
                                             @endforeach 
                                         </tbody>
                                         <tfoot>
                                             <tr>
                                                 <th>id</th>
-                                                <th>Name</th>
-                                                <th>skill_id</th>
-                                                <th>first_name</th>
-                                                <th>last_name</th>
-                                                <th>email</th>
-                                                <th>phone</th>
-                                                <th>gender</th>
-                                                <th>password</th>
+                                                <th>skills Name</th>
                                                 <th>edit</th>
                                                 <th>delete</th>
                                             </tr>

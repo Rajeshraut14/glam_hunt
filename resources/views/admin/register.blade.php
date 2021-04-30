@@ -20,7 +20,7 @@
             </div><div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <form class="form-horizontal" action="{{route('save')}}" method="POST">
+                            <form class="form-horizontal" action="{{route('admin.save')}}" method="POST">
                                 @csrf
                                 <div class="card-body">
                                     <h4 class="card-title">Personal Info</h4>

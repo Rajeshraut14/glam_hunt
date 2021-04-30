@@ -55,7 +55,7 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="{{ url('/admin/dashboard') }}">
+                    <a class="navbar-brand" href=" ">
                         <!-- Logo icon -->
                         <b class="logo-icon ps-2">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -104,7 +104,7 @@
                         <!-- create new -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown"  href="{{ url('/registers') }}">Add Form</a>
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown"  >Create New</a>
                             
                             </a>
                         </li>
@@ -254,11 +254,13 @@
                                 href="{{ url('/admin/dashboard') }}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="{{ url('/table') }}" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
+                                href="{{route('admin.artist')}}" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
                                     class="hide-menu">Tables</span></a></li>
-                                                        <li class="sidebar-item"><a href="{{ url('/registers') }}" class="sidebar-link"><i
-                                            class="mdi mdi-note-plus"></i><span class="hide-menu"> Add Form
-                                        </span></a></li>
+                                    
+                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="{{route('admin.skillview')}}" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
+                                    class="hide-menu">Skill</span></a></li>
+                                                        
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->

@@ -79,10 +79,10 @@
                                         <div class="col-sm-9">
                                             <select   name="ugender" class="form-control" id="cono1"
                                                 placeholder="Gender" value="{{$item->gender}}"> 
-                                                <option value="#">--Gender--</option>
-                                                <option value="male">Male</option>
-                                                <option value="female">Female</option>
-                                                <option value="transgender">Transgender</option>
+                                                <option value=" ">--Gender--</option>
+                                                <option value="1">Male</option>
+                                                <option value="2">Female</option>
+                                                <option value="3">Transgender</option>
  
                                             </select>
                                         </div>

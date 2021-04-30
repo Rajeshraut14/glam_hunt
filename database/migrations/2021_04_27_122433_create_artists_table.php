@@ -23,7 +23,7 @@ class CreateArtistsTable extends Migration
             $table->integer('phone')->length(20)->unique();
             $table->string('profile_image',100)->nullable();
             $table->string('gender',20);
-            $table->string('password',25);
+            $table->string('password',100);
             $table->string('address',200)->nullable();
             $table->string('city_id',25)->nullable();
             $table->string('state_id',25)->nullable();
