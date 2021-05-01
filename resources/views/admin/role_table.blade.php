@@ -26,7 +26,7 @@
                         </li>
 <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Basic Datatable</h5>
+                                <h5 class="card-title">Role Datatable</h5>
                             <a style="margin-left:1000px"  href="{{route('admin.roleregister')}}" class="btn btn-success">Add</a>
                                 <div class="table-responsive">
                                     <table id="zero_config" class="table table-striped table-bordered">
@@ -39,7 +39,7 @@
  
                                                 <th>Id</th>
                                                 <th>Name</th>
-                                                <th>status</th>
+                                                <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -63,7 +63,7 @@
 
                                                 <th>Id</th>
                                                 <th>Name</th>
-                                                <th>status</th>
+                                                <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>

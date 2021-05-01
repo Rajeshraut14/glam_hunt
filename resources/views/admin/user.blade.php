@@ -23,7 +23,7 @@
                             <form class="form-horizontal" action="{{route('admin.users')}}" method="POST">
                                 @csrf
                                 <div class="card-body">
-                                    <h4 class="card-title">Personal Info</h4>
+                                    <h4 class="card-title">User Form</h4>
                                     
                                     <div class="form-group row">
                                         <label for="fname"
@@ -38,7 +38,7 @@
                                             class="col-sm-3 text-end control-label col-form-label">Email</label>
                                         <div class="col-sm-9">
                                             <input type="email" name="uemail" class="form-control" id="email"
-                                                placeholder="Email">
+                                                placeholder="Your Email">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -46,7 +46,7 @@
                                             class="col-sm-3 text-end control-label col-form-label">Role Id</label>
                                         <div class="col-sm-9">
                                             <input type="number" name="urole" class="form-control" id="phome"
-                                                placeholder="Phone">
+                                                placeholder="Role id">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -55,7 +55,7 @@
                                         <div class="col-sm-9">
 
                                             <input type="password" name="upassword" class="form-control" id="cono1"
-                                                placeholder="Password">
+                                                placeholder="Your Password">
                                         </div>
                                     </div>
                                     

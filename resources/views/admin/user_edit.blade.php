@@ -23,14 +23,14 @@
                             <form class="form-horizontal" action="{{route('admin.useredit',$item->id)}}" method="POST">
                                 @csrf
                                 <div class="card-body">
-                                    <h4 class="card-title">Personal Info</h4>
+                                    <h4 class="card-title">User Update</h4>
                                     
                                     <div class="form-group row">
                                         <label for="fname"
                                             class="col-sm-3 text-end control-label col-form-label">Name</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="uname" class="form-control" id="fname"
-                                                placeholder="First Name " value="{{$item->name}}">
+                                                placeholder="Your First Name " value="{{$item->name}}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -38,7 +38,7 @@
                                             class="col-sm-3 text-end control-label col-form-label">Email</label>
                                         <div class="col-sm-9">
                                             <input type="email" name="uemail" class="form-control" id="email"
-                                                placeholder="Email" value="{{$item->email}}">
+                                                placeholder="Your Email" value="{{$item->email}}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -46,7 +46,7 @@
                                             class="col-sm-3 text-end control-label col-form-label">Role Id</label>
                                         <div class="col-sm-9">
                                             <input type="number" name="urole" class="form-control" id="phome"
-                                                placeholder="Phone" value="{{$item->role_id}}">
+                                                placeholder="Your Phone" value="{{$item->role_id}}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -55,7 +55,7 @@
                                         <div class="col-sm-9">
 
                                             <input type="password" name="upassword" class="form-control" id="cono1"
-                                                placeholder="Password" value="{{$item->password}}">
+                                                placeholder="Your Password" value="{{$item->password}}">
                                         </div>
                                     </div>
                                     

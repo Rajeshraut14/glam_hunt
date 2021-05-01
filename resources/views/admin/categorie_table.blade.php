@@ -26,8 +26,8 @@
                         </li>
 <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Skill Datatable</h5>
-                            <a style="margin-left:1000px"  href="{{route('admin.skill')}}" class="btn btn-success">Add</a>
+                                <h5 class="card-title">Categories Datatable</h5>
+                            <a style="margin-left:1000px"  href="{{route('admin.category')}}" class="btn btn-success">Add</a>
                                 <div class="table-responsive">
                                     <table id="zero_config" class="table table-striped table-bordered">
                                         <thead>
@@ -37,25 +37,39 @@
                                             <tr>
 
                                                 <th>Id</th>
-                                                <th>Skill Name</th>
+                                                <th>Name</th>
+                                                <th>parent Id</th>
+                                                <th>Show In Navigation</th>
+                                                <th>Is Featured</th>
+                                                <th>status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                       <tbody>
                                             @foreach($view as $item)
                                             <tr>
                                                 <td>{{$item->id}}</td>
-                                                <td>{{$item->skill}}</td>
+                                                <td>{{$item->name}}</td>
+                                                 <td>{{$item->parent_id}}</td>
+                                                  <td>{{$item->show_in_navigation}}</td>
+                                                  <td>{{$item->is_featured}}</td>
+                                                 <td>{{$item->status}}</td>
+                                                 <td><a class="btn btn-success" href="{{route('admin.categorieupdate',$item->id)}}"><i class="fa fa-edit"></i></a>
 
-                                                <td><a class="btn btn-success" href="{{route('admin.skillupdate',$item->id)}}"><i class="fa fa-edit"></i></a>
-                                           <a class="btn btn-danger" href="{{route('admin.skilldelete',$item->id)}}"><i class="fa fa-trash-alt"></i></a></td> 
-                                             </tr>
+                                           <a class="btn btn-danger" href="{{route('admin.categoridelete',$item->id)}}" ><i class="fa fa-trash-alt"></i></a>
+                                                </td>
+                                                  </tr>
                                             @endforeach 
                                         </tbody>
                                         <tfoot>
                                             <tr>
+
                                                 <th>Id</th>
-                                                <th>Skill Name</th>
+                                                <th>Name</th>
+                                                <th>parent Id</th>
+                                                <th>Show In Navigation</th>
+                                                <th>Is Featured</th>
+                                                <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>

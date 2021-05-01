@@ -32,7 +32,7 @@ class CreateArtistsTable extends Migration
             $table->string('interest',55)->nullable();
              $table->date('date_of_birth');
              $table->text('about')->nullable();
-             $table->tinyInteger('status')->nullable();
+             $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }

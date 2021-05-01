@@ -23,14 +23,14 @@
                             <form class="form-horizontal" action="{{route('admin.skilledit',$item->id)}}" method="POST">
                                 @csrf
                                 <div class="card-body">
-                                    <h4 class="card-title">Personal Info</h4>
+                                    <h4 class="card-title">Skill Update</h4>
                                     
                                     <div class="form-group row">
                                         <label for="fname"
-                                            class="col-sm-3 text-end control-label col-form-label">Username</label>
+                                            class="col-sm-3 text-end control-label col-form-label">Skill</label>
                                         <div class="col-sm-9">
                                             <input type="text"  name="uskill" class="form-control" id="email"
-                                                placeholder="Username" value="{{$item->skill}}">
+                                                placeholder="Skill" value="{{$item->skill}}">
                                         </div>
                                     </div>
                                     

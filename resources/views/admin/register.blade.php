@@ -23,14 +23,14 @@
                             <form class="form-horizontal" action="{{route('admin.save')}}" method="POST">
                                 @csrf
                                 <div class="card-body">
-                                    <h4 class="card-title">Personal Info</h4>
+                                    <h4 class="card-title">Artist Form</h4>
                                     
                                     <div class="form-group row">
                                         <label for="fname"
                                             class="col-sm-3 text-end control-label col-form-label">Username</label>
                                         <div class="col-sm-9">
                                             <input type="text"  name="uusername" class="form-control" id="email"
-                                                placeholder="Username">
+                                                placeholder="Your Username">
                                         </div>
                                     </div>
                                     
@@ -39,7 +39,7 @@
                                             class="col-sm-3 text-end control-label col-form-label">Skill</label>
                                         <div class="col-sm-9">
                                             <input type="text"  name="uskill" class="form-control" id="fname"
-                                                placeholder="Skill">
+                                                placeholder="Your Skill">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -47,15 +47,15 @@
                                             class="col-sm-3 text-end control-label col-form-label">First Name</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="ufirst" class="form-control" id="fname"
-                                                placeholder="First Name ">
-                                        </div>
+                                                placeholder="Your First Name ">
+                                        </div> 
                                     </div>
                                     <div class="form-group row">
                                         <label for="lname" class="col-sm-3 text-end control-label col-form-label">Last
                                             Name</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="ulast" class="form-control" id="lname"
-                                                placeholder="Last Name ">
+                                                placeholder="Your Last Name ">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -63,7 +63,7 @@
                                             class="col-sm-3 text-end control-label col-form-label">Email</label>
                                         <div class="col-sm-9">
                                             <input type="email" name="uemail" class="form-control" id="email"
-                                                placeholder="Email">
+                                                placeholder="Your Email">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -71,7 +71,7 @@
                                             class="col-sm-3 text-end control-label col-form-label">Phone</label>
                                         <div class="col-sm-9">
                                             <input type="number" name="uphone" class="form-control" id="phome"
-                                                placeholder="Phone">
+                                                placeholder="Your Phone">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -80,10 +80,23 @@
                                         <div class="col-sm-9">
                                             <select   name="ugender" class="form-control" id="cono1"
                                                 placeholder="Gender"> 
-                                                <option value="#">--Gender--</option>
+                                                <option value="">--Gender--</option>
                                                 <option value="male">Male</option>
                                                 <option value="female">Female</option>
                                                 <option value="transgender">Transgender</option>
+ 
+                                            </select>
+                                        </div>
+                                    </div>
+                                      <div class="form-group row">
+                                        <label for="fname"
+                                            class="col-sm-3 text-end control-label col-form-label">Status</label>
+                                        <div class="col-sm-9">
+                                            <select   name="ustatus" class="form-control" id="cono1"
+                                                placeholder="Your Status" > 
+                                                <option value="">--Status--</option>
+                                                <option value="0">activ</option>
+                                                <option value="1">Inactiv</option>
  
                                             </select>
                                         </div>
@@ -94,7 +107,7 @@
                                         <div class="col-sm-9">
 
                                             <input type="password" name="upassword" class="form-control" id="cono1"
-                                                placeholder="Password">
+                                                placeholder="Your Password">
                                         </div>
                                     </div>
                                     

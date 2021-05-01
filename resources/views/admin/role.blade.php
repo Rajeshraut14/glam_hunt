@@ -23,7 +23,7 @@
                             <form class="form-horizontal" action="{{route('admin.roles')}}" method="POST">
                                 @csrf
                                 <div class="card-body">
-                                    <h4 class="card-title">Personal Info</h4>
+                                    <h4 class="card-title">Role Form</h4>
                                     
                                     <div class="form-group row">
                                         <label for="fname"
@@ -37,8 +37,13 @@
                                         <label for="fname"
                                             class="col-sm-3 text-end control-label col-form-label">Status</label>
                                         <div class="col-sm-9">
-                                            <input type="text"  name="ustatus" class="form-control" id="status"
-                                                placeholder="Your status">
+                                                 <select   name="ustatus" class="form-control" id="cono1"
+                                                placeholder="Gender"> 
+                                                <option value=" ">--Status--</option>
+                                                <option value="0">activ</option>
+                                                <option value="1">Inactiv</option>
+ 
+                                            </select>
                                         </div>
                                     </div>
                                     

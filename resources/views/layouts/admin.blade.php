@@ -16,7 +16,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
     <!-- Custom CSS -->
     <script src="{{ asset('assets/libs/flot/css/float-chart.css') }}" rel="stylesheet"></script>
-
+    <link href="{{ asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
 
     <!-- Custom CSS -->
         <link href="{{ asset('dist/css/style.min.css') }}" rel="stylesheet">
@@ -268,6 +268,10 @@
                                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{{route('admin.userss')}}" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
                                     class="hide-menu">User</span></a></li>
+
+                                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="{{route('admin.categores')}}" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
+                                    class="hide-menu">Category</span></a></li>
                                                      
                     </ul>
                 </nav>
@@ -335,7 +339,6 @@
             <script src="{{ asset('dist/js/custom.min.js') }}" defer></script>
     <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
     <!-- Charts js Files -->
-
 <script src="{{ asset('assets/libs/flot/excanvas.js') }}" defer></script>
 <script src="{{ asset('assets/libs/flot/formmuliple.js') }}" defer></script>
 <script src="{{ asset('assets/libs/flot/jquery.flot.js') }}" defer></script>
@@ -345,6 +348,10 @@
 <script src="{{ asset('assets/libs/flot/jquery.lot.crosshair.js') }}" defer></script>
 <script src="{{ asset('assets/libs/flot/jquery.flot.tooltip.min.js') }}" defer></script>
 <script src="{{ asset('dist/js/pages/chart/chart-page-init.js') }}" defer></script>
+<script src="{{ asset('assets/extra-libs/DataTables/datatables.min.js') }}" defer></script>
+<script type="text/javascript"> 
+    $('#datatable').DataTable();
+</script>
 </body>
 
 </html>

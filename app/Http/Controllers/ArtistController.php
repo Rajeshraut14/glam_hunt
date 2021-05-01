@@ -35,6 +35,7 @@ public function view(){
 	'uphone'=>'required',
 	'ugender'=>'required',
 	'upassword'=>'required',
+	'ustatus'=>'required',
 		
 		
 		]);
@@ -47,6 +48,7 @@ public function view(){
 		$emp->phone = $arr->uphone;
 		$emp->gender = $arr->ugender;
 		$emp->password = bcrypt($arr->upassword);
+		$emp->status = $arr->ustatus;
 		
 	$emp->save();
 	
@@ -73,6 +75,8 @@ public function updates(Request $request)
 		$user->phone = $request->uphone;
 		$user->gender = $request->ugender;
 		$user->password = bcrypt($request->upassword);
+		$user->status = $request->ustatus;
+
 		
 	if($user->save()){
                	return redirect('/admin/artist')->with('success','update seccessfully');

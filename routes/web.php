@@ -83,8 +83,18 @@ Route::post('/Submituser/{id}', 'UserController@userupdates')->name('useredit');
 Route::get('/userdelete/{id}', 'UserController@userdelete')->name('userdelete');
 });
 
+Route::group(['prefix' => 'admin', 'as'=>'admin.'], function()
+{
+//Route::get('/category', 'UserController@registercategory')->name('category');
+	Route::get('/category', 'CategoryController@registercategory')->name('category');
+Route::POST('/submitcategory', 'CategoryController@submitcategory')->name('categorys');
 
+Route::get('/categore/view', 'CategoryController@categoreview')->name('categores');
 
+Route::get('/categorieUpdate/{id}', 'CategoryController@categorieedits')->name('categorieupdate');
+Route::post('/Submitcategorie/{id}', 'CategoryController@categorieupdates')->name('categorieedit');
+Route::get('/categoridelete/{id}', 'CategoryController@categoridelete')->name('categoridelete');
+});
 
 
 
