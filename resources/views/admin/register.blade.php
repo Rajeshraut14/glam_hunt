@@ -20,8 +20,11 @@
             </div><div class="row">
                     <div class="col-md-12">
                         <div class="card">
+
                             <form class="form-horizontal" action="{{route('admin.save')}}" method="POST">
                                 @csrf
+
+                                <input type="hidden" value="<?php echo (isset($id)) ? $id : '' ?>" name="id">
                                 <div class="card-body">
                                     <h4 class="card-title">Artist Form</h4>
                                     
@@ -30,7 +33,7 @@
                                             class="col-sm-3 text-end control-label col-form-label">Username</label>
                                         <div class="col-sm-9">
                                             <input type="text"  name="uusername" class="form-control" id="email"
-                                                placeholder="Your Username">
+                                                placeholder="Your Username" value="{{isset($item->username) ? $item->username : ''}}">
                                         </div>
                                     </div>
                                     
@@ -39,7 +42,7 @@
                                             class="col-sm-3 text-end control-label col-form-label">Skill</label>
                                         <div class="col-sm-9">
                                             <input type="text"  name="uskill" class="form-control" id="fname"
-                                                placeholder="Your Skill">
+                                                placeholder="Your Skill" value="{{isset($item->skill_id) ? $item->skill_id : ''}}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -47,7 +50,7 @@
                                             class="col-sm-3 text-end control-label col-form-label">First Name</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="ufirst" class="form-control" id="fname"
-                                                placeholder="Your First Name ">
+                                                placeholder="Your First Name " value="{{isset($item->first_name) ? $item->first_name : ''}}">
                                         </div> 
                                     </div>
                                     <div class="form-group row">
@@ -55,23 +58,25 @@
                                             Name</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="ulast" class="form-control" id="lname"
-                                                placeholder="Your Last Name ">
+                                                placeholder="Your Last Name " value="{{isset($item->last_name) ? $item->last_name : ''}}">
                                         </div>
                                     </div>
+                                    @if(!isset($item->email))
                                     <div class="form-group row">
                                         <label for="email"
                                             class="col-sm-3 text-end control-label col-form-label">Email</label>
                                         <div class="col-sm-9">
                                             <input type="email" name="uemail" class="form-control" id="email"
-                                                placeholder="Your Email">
+                                                placeholder="Your Email" >
                                         </div>
                                     </div>
+                                    @endif
                                     <div class="form-group row">
                                         <label for="phone1"
                                             class="col-sm-3 text-end control-label col-form-label">Phone</label>
                                         <div class="col-sm-9">
                                             <input type="number" name="uphone" class="form-control" id="phome"
-                                                placeholder="Your Phone">
+                                                placeholder="Your Phone" value="{{isset($item->phone) ? $item->phone : ''}}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -80,11 +85,9 @@
                                         <div class="col-sm-9">
                                             <select   name="ugender" class="form-control" id="cono1"
                                                 placeholder="Gender"> 
-                                                <option value="">--Gender--</option>
-                                                <option value="male">Male</option>
-                                                <option value="female">Female</option>
-                                                <option value="transgender">Transgender</option>
- 
+                                                @foreach(gender() as $k => $val)
+                                                    <option value={{$k}} {{ (isset($item->gender) && ($item->gender) == $k) ? 'selected="selected"' : '' }} >{{$val}}</option>
+                                                @endforeach   
                                             </select>
                                         </div>
                                     </div>
@@ -94,10 +97,9 @@
                                         <div class="col-sm-9">
                                             <select   name="ustatus" class="form-control" id="cono1"
                                                 placeholder="Your Status" > 
-                                                <option value="">--Status--</option>
-                                                <option value="0">activ</option>
-                                                <option value="1">Inactiv</option>
- 
+                                                 @foreach(status() as $s => $valu)
+                                                    <option value={{$s}} {{ (isset($item->status) && ($item->status) == $s) ? 'selected="selected"' : '' }} >{{$valu}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -107,7 +109,7 @@
                                         <div class="col-sm-9">
 
                                             <input type="password" name="upassword" class="form-control" id="cono1"
-                                                placeholder="Your Password">
+                                                placeholder="Your Password" value="{{isset($item->password) ? $item->password : ''}}">
                                         </div>
                                     </div>
                                     

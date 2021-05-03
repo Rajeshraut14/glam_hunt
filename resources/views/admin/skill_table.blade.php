@@ -29,16 +29,16 @@
                                 <h5 class="card-title">Skill Datatable</h5>
                             <a style="margin-left:1000px"  href="{{route('admin.skill')}}" class="btn btn-success">Add</a>
                                 <div class="table-responsive">
-                                    <table id="zero_config" class="table table-striped table-bordered">
+                                    <table id="zero_config" class="table table-striped table-bordered datatable">
                                         <thead>
                                             @if(Session::has('success'))
 <p class="alert alert-danger">{{ Session::get('success') }}</p>
 @endif
                                             <tr>
 
-                                                <th>Id</th>
-                                                <th>Skill Name</th>
-                                                <th>Action</th>
+                                              <th><b>Id</b></th>
+                                                <th><b>Skill Name</b></th>
+                                                <th><b>Action</b></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -54,9 +54,9 @@
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th>Id</th>
-                                                <th>Skill Name</th>
-                                                <th>Action</th>
+                                              <th><b>Id</b></th>
+                                                <th><b>Skill Name</b></th>
+                                                <th><b>Action</b></th>
                                             </tr>
                                         </tfoot>
                                     </table>

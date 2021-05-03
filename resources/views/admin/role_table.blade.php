@@ -29,7 +29,7 @@
                                 <h5 class="card-title">Role Datatable</h5>
                             <a style="margin-left:1000px"  href="{{route('admin.roleregister')}}" class="btn btn-success">Add</a>
                                 <div class="table-responsive">
-                                    <table id="zero_config" class="table table-striped table-bordered">
+                                    <table id="zero_config" class="table table-striped table-bordered datatable">
                                         <thead>
                                             @if(Session::has('success'))
 <p class="alert alert-danger">{{ Session::get('success') }}</p>
@@ -37,10 +37,11 @@
                                             <tr>
 
  
-                                                <th>Id</th>
-                                                <th>Name</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
+
+                                              <th><b>Id</b></th>
+                                                <th><b>Name</b></th>
+                                                <th><b>status</b></th>
+                                                <th><b>Action</b></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -48,7 +49,7 @@
                                             <tr>
                                                 <td>{{$item->id}}</td>
                                                 <td>{{$item->name}}</td>
-                                                <td>{{$item->status}}</td>
+                                                <td>{{status($item->status)}}</td>
                                             
                                                 <td><a class="btn btn-success" href="{{route('admin.roleupdate',$item->id)}}"><i class="fa fa-edit"></i></a>
 
@@ -61,10 +62,10 @@
                                         <tfoot>
                                             <tr>
 
-                                                <th>Id</th>
-                                                <th>Name</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
+                                              <th><b>Id</b></th>
+                                                <th><b>Name</b></th>
+                                                <th><b>status</b></th>
+                                                <th><b>Action</b></th>
                                             </tr>
                                         </tfoot>
                                     </table>

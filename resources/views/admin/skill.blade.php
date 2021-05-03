@@ -22,6 +22,7 @@
                         <div class="card">
                             <form class="form-horizontal" action="{{route('admin.skillsave')}}" method="POST">
                                 @csrf
+                               <input type="hidden" value="<?php echo (isset($id)) ? $id : '' ?>" name="id">
                                 <div class="card-body">
                                     <h4 class="card-title">Skill Form</h4>
                                     
@@ -30,7 +31,7 @@
                                             class="col-sm-3 text-end control-label col-form-label">Skill</label>
                                         <div class="col-sm-9">
                                             <input type="text"  name="uskill" class="form-control" id="email"
-                                                placeholder="Your skill">
+                                                placeholder="Your skill" value="{{isset($item->skill) ? $item->skill : ''}}">
                                         </div>
                                     </div>
                                     

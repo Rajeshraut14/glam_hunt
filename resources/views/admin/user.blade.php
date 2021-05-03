@@ -22,6 +22,7 @@
                         <div class="card">
                             <form class="form-horizontal" action="{{route('admin.users')}}" method="POST">
                                 @csrf
+                                 <input type="hidden" value="<?php echo (isset($id)) ? $id : '' ?>" name="id">
                                 <div class="card-body">
                                     <h4 class="card-title">User Form</h4>
                                     
@@ -30,32 +31,33 @@
                                             class="col-sm-3 text-end control-label col-form-label">Name</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="uname" class="form-control" id="fname"
-                                                placeholder="First Name ">
+                                                placeholder="First Name " value="{{isset($item->name) ? $item->name : ''}}">
                                         </div>
                                     </div>
+                                  @if(!isset($item->email))
                                     <div class="form-group row">
                                         <label for="email"
                                             class="col-sm-3 text-end control-label col-form-label">Email</label>
                                         <div class="col-sm-9">
                                             <input type="email" name="uemail" class="form-control" id="email"
-                                                placeholder="Your Email">
+                                                placeholder="Your Email" >
                                         </div>
                                     </div>
+                                    @endif
                                     <div class="form-group row">
                                         <label for="phone1"
                                             class="col-sm-3 text-end control-label col-form-label">Role Id</label>
                                         <div class="col-sm-9">
                                             <input type="number" name="urole" class="form-control" id="phome"
-                                                placeholder="Role id">
+                                                placeholder="Role id" value="{{isset($item->role_id) ? $item->role_id : ''}}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="cono1"
                                             class="col-sm-3 text-end control-label col-form-label">Password</label>
                                         <div class="col-sm-9">
-
-                                            <input type="password" name="upassword" class="form-control" id="cono1"
-                                                placeholder="Your Password">
+                                           <input type="password" name="upassword" class="form-control" id="cono1"
+                                                placeholder="Your Password" value="{{isset($item->password) ? $item->password : ''}}">
                                         </div>
                                     </div>
                                     

@@ -29,20 +29,20 @@
                                 <h5 class="card-title">Categories Datatable</h5>
                             <a style="margin-left:1000px"  href="{{route('admin.category')}}" class="btn btn-success">Add</a>
                                 <div class="table-responsive">
-                                    <table id="zero_config" class="table table-striped table-bordered">
+                                    <table id="zero_config" class="table table-striped table-bordered datatable">
                                         <thead>
                                             @if(Session::has('success'))
 <p class="alert alert-danger">{{ Session::get('success') }}</p>
 @endif
                                             <tr>
 
-                                                <th>Id</th>
-                                                <th>Name</th>
-                                                <th>parent Id</th>
-                                                <th>Show In Navigation</th>
-                                                <th>Is Featured</th>
-                                                <th>status</th>
-                                                <th>Action</th>
+                                             <th><b>Id</b></th>
+                                                <th><b>Name</b></th>
+                                                <th><b>parent Id</b></th>
+                                                <th><b>Show In Navigation</b></th>
+                                                <th><b>Is Featured</b></th>
+                                                <th><b>status</b></th>
+                                                <th><b>Action</b></th>
                                             </tr>
                                         </thead>
                                        <tbody>
@@ -53,7 +53,7 @@
                                                  <td>{{$item->parent_id}}</td>
                                                   <td>{{$item->show_in_navigation}}</td>
                                                   <td>{{$item->is_featured}}</td>
-                                                 <td>{{$item->status}}</td>
+                                                 <td>{{status($item->status)}}</td>
                                                  <td><a class="btn btn-success" href="{{route('admin.categorieupdate',$item->id)}}"><i class="fa fa-edit"></i></a>
 
                                            <a class="btn btn-danger" href="{{route('admin.categoridelete',$item->id)}}" ><i class="fa fa-trash-alt"></i></a>
@@ -64,13 +64,13 @@
                                         <tfoot>
                                             <tr>
 
-                                                <th>Id</th>
-                                                <th>Name</th>
-                                                <th>parent Id</th>
-                                                <th>Show In Navigation</th>
-                                                <th>Is Featured</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
+                                                <th><b>Id</b></th>
+                                                <th><b>Name</b></th>
+                                                <th><b>parent Id</b></th>
+                                                <th><b>Show In Navigation</b></th>
+                                                <th><b>Is Featured</b></th>
+                                                <th><b>status</b></th>
+                                                <th><b>Action</b></th>
                                             </tr>
                                         </tfoot>
                                     </table>

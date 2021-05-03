@@ -17,36 +17,28 @@
                     </div>
                 </div>
             </div>
-                            <li class="nav-item search-box"> 
-                               <a class="nav-link waves-effect waves-dark"
-                                href="javascript:void(0)"><i class="ti-search"></i></a>
-                            <form class="app-search position-absolute">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
-                                    class="srh-btn"><i class="ti-close"></i></a>
-                            </form>
-                        </li>
                          <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Artist Datatable</h5>
                             <a style="margin-left:1000px"  href="{{route('admin.register')}}" class="btn btn-success">Add</a>
                                 <div class="table-responsive">
-                                    <table id="datatable" class="table table-striped table-bordered">
+                                    <table class="table table-striped table-bordered datatable" border="1">
                                         <thead>
                                             @if(Session::has('success'))
                                           <p class="alert alert-danger">{{ Session::get('success') }}</p>
                                               @endif
                                             <tr>
 
-                                                <th>Id</th>
-                                                <th>Name</th>
-                                                <th>Skill Id</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Email</th>
-                                                <th>Phone</th>
-                                                <th>Gender</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
+                                                <th><b>Id</b></th>
+                                                <th><b>Name</b></th>
+                                                <th><b>Skill Id</b></th>
+                                                <th><b>First Name</b></th>
+                                                <th><b>Last Name</b></th>
+                                                <th><b>Email</b></th>
+                                                <th><b>Phone</b></th>
+                                                <th><b>Gender</b></th>
+                                                <th><b>Status</b></th>
+                                                <th><b>Action</b></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -59,11 +51,11 @@
                                                 <th>{{$item->last_name}}</th>
                                                 <th>{{$item->email}}</th>
                                                 <th>{{$item->phone}}</th>
-                                                <th>{{$item->gender}}</th>
-                                                <th>{{$item->status}}</th>
+                                                <th>{{gender($item->gender)}}</th>
+                                                <th>{{status($item->status)}}</th>
                                                 <td><a class="btn btn-success" href="{{route('admin.update',$item->id)}}"><i class="fa fa-edit"></i></a>
 
-                                                <a class="btn btn-danger" href="{{route('admin.delete',$item->id)}}"><i class="fas fa-trash-alt"></i></a></td>                                            
+                                                <a class="btn btn-danger" href="{{route('admin.delete',$item->id)}}"><i class="fa fa-trash-alt"></i></a></td>                                            
                                                 
                                              </tr>
                                             @endforeach 
@@ -72,16 +64,16 @@
                                         <tfoot>
                                             <tr>
 
-                                                <th>Id</th>
-                                                <th>Name</th>
-                                                <th>Skill Id</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Email</th>
-                                                <th>Phone</th>
-                                                <th>Gender</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
+                                                <th><b>Id</b></th>
+                                                <th><b>Name</b></th>
+                                                <th><b>Skill Id</b></th>
+                                                <th><b>First Name</b></th>
+                                                <th><b>Last Name</b></th>
+                                                <th><b>Email</b></th>
+                                                <th><b>Phone</b></th>
+                                                <th><b>Gender</b></th>
+                                                <th><b>Status</b></th>
+                                                <th><b>Action</b></th>
                                             </tr>
                                         </tfoot>
                                     </table>

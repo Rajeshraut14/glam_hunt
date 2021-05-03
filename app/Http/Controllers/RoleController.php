@@ -4,35 +4,43 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\role;
+use App\helpers\helper;
 use Auth;
 use Illuminate\Support\Facades\DB;
 
 class RoleController extends Controller
 {
     public function registerrole(){
-		
-		return view('admin.role');
+    	$item = false;
+		return view('admin.role', compact('item'));
 		
 	}
 
 	public function submitrole(Request $arr){
-		
+		if(!isset($arr->id)) {
 		$this->validate($arr,[
 		
 	'uname'=>'required',
-	'ustatus'=>'required',
+	'ustatus'=>'required'
 		
 		
 		]);
-		$emp = new role;
+	}
+	if(isset($arr->id)) {
+			$id = $arr->id;
+			$emp = role::find($id);
+		} else {
+			$emp = new role;
+		}
 		$emp->name = $arr->uname;
 		$emp->status = $arr->ustatus;
 		
-	$emp->save();
+	if($emp->save()){
 	
 	
    return redirect('admin/role')->with('success','successfully'); 
 	}
+}
 	public function roleview(){
 
 		$data= DB::table('roles')->get();
@@ -45,7 +53,7 @@ class RoleController extends Controller
 	$id = $request->id;
 	$item = role::where('id',$id)->first();
 	//dd($item);
-	return view('admin.role_edit',compact('item'));
+	return view('admin.role',compact('item','id'));
 }
 public function roleupdates(Request $request)
 {

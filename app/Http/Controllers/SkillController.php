@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\skill;
+use App\helpers\helper;
 use Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -11,7 +12,9 @@ class SkillController extends Controller
 {
      public function registerskill(){
 		
-		return view('admin.skill');
+		$item = false;
+		return view('admin.skill', compact('item'));
+		//return view('admin.register');
 		
 	}
 
@@ -23,13 +26,22 @@ class SkillController extends Controller
 		
 		
 		]);
-		$emp = new skill;
+	
+		if($arr->id) {
+			$id = $arr->id;
+			$emp = skill::find($id);
+		} else {
+			$emp = new skill;
+		}
 		$emp->skill = $arr->uskill;
 		
-	$emp->save();
-	
-	
+	if($emp->save()){
+
    return redirect('admin/skillview')->with('success','successfully'); 
+
+	}
+	
+	
 	}
 	public function skillview(){
 
@@ -43,7 +55,7 @@ class SkillController extends Controller
 	$id = $request->id;
 	$item = skill::where('id',$id)->first();
 	//dd($item);
-	return view('admin.skill_edit',compact('item'));
+	return view('admin.skill',compact('item','id'));
 }
 public function skillupdates(Request $request)
 {

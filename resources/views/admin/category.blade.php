@@ -22,6 +22,7 @@
                         <div class="card">
                             <form class="form-horizontal" action="{{route('admin.categorys')}}" method="POST">
                                 @csrf
+                                <input type="hidden" value="<?php echo (isset($id)) ? $id : '' ?>" name="id">
                                 <div class="card-body">
                                     <h4 class="card-title">Categories Form</h4>
                                     
@@ -30,7 +31,7 @@
                                             class="col-sm-3 text-end control-label col-form-label">Name</label>
                                         <div class="col-sm-9">
                                             <input type="text"  name="uname" class="form-control" id="email"
-                                                placeholder="your Name">
+                                                placeholder="your Name" value="{{isset($item->name) ? $item->name : ''}}">
                                         </div>
                                     </div>
                                     
@@ -39,7 +40,7 @@
                                             class="col-sm-3 text-end control-label col-form-label">Parent Id</label>
                                         <div class="col-sm-9">
                                             <input type="number"  name="uparent" class="form-control" id="fname"
-                                                placeholder="parent id">
+                                                placeholder="parent id" value="{{isset($item->parent_id) ? $item->parent_id : ''}}">
                                         </div>
                                     </div>
                                       <div class="form-group row">
@@ -48,21 +49,43 @@
                                         <div class="col-sm-9">
                                             <select   name="ustatus" class="form-control" id="cono1"
                                                 placeholder="Gender" > 
-                                                <option value="">--Status--</option>
-                                                <option value="0">active</option>
-                                                <option value="1">Inactive</option>
- 
+                                                 @foreach(status() as $s => $valu)
+                                                    <option value={{$s}} {{ (isset($item->status) && ($item->status) == $s) ? 'selected="selected"' : '' }} >{{$valu}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox"  name="ushow_in_navigation" id="inlineCheckbox1" value="1">
-                                                <label class="form-check-label" for="inlineCheckbox1">Show In Navigation</label>
+                               @if(!isset($item->show_in_navigation))
+                             
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox"  name="ushow_in_navigation" id="inlineCheckbox1"   value="1">
+                                    <label class="form-check-label" for="inlineCheckbox1">Show In Navigation</label>
                                      </div>
-                                          <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="uis_featured" id="inlineCheckbox1" value="1">
-                                                <label class="form-check-label" for="inlineCheckbox1">Is Featured</label>
+                              
+                              @else
+
+                             <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox"  name="ushow_in_navigation" id="inlineCheckbox1"   value="1" <?php echo ($item->show_in_navigation == 1) ? 'checked' : '' ?>>
+                             <label class="form-check-label" for="inlineCheckbox1">Show In Navigation</label>
                                      </div>
+                                 
+                                 @endif  
+                                @if(!isset($item->is_featured))
+                             
+                               <div class="form-check form-check-inline">
+                                 <input class="form-check-input" type="checkbox" name="uis_featured" id="inlineCheckbox1" value="1">
+                                    <label class="form-check-label" for="inlineCheckbox1">Is Featured</label>
+                                     </div>
+                              
+                              @else
+
+                             <div class="form-check form-check-inline">
+                             <input class="form-check-input" type="checkbox" name="uis_featured" id="inlineCheckbox1" value="1" <?php echo ($item->is_featured == 1) ? 'checked' : '' ?>>
+                             <label class="form-check-label" for="inlineCheckbox1">Is Featured</label>
+                                     </div>
+                                 
+                                 @endif                                   
+
                                 <div class="border-top">
                                     <div class="card-body">
                                         <button type="submite" class="btn btn-primary">submit</button>

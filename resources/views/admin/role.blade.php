@@ -22,6 +22,7 @@
                         <div class="card">
                             <form class="form-horizontal" action="{{route('admin.roles')}}" method="POST">
                                 @csrf
+                                 <input type="hidden" value="<?php echo (isset($id)) ? $id : '' ?>" name="id">
                                 <div class="card-body">
                                     <h4 class="card-title">Role Form</h4>
                                     
@@ -30,7 +31,7 @@
                                             class="col-sm-3 text-end control-label col-form-label">Name</label>
                                         <div class="col-sm-9">
                                             <input type="text"  name="uname" class="form-control" id="email"
-                                                placeholder="Your role">
+                                                placeholder="Your role" value="{{isset($item->name) ? $item->name : ''}}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -39,10 +40,10 @@
                                         <div class="col-sm-9">
                                                  <select   name="ustatus" class="form-control" id="cono1"
                                                 placeholder="Gender"> 
-                                                <option value=" ">--Status--</option>
-                                                <option value="0">activ</option>
-                                                <option value="1">Inactiv</option>
- 
+                                                    @foreach(status() as $s => $valu)
+                                                    <option value={{$s}} {{ (isset($item->status) && ($item->status) == $s) ? 'selected="selected"' : '' }} >{{$valu}}</option>
+                                                @endforeach
+
                                             </select>
                                         </div>
                                     </div>

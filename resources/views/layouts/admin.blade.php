@@ -111,13 +111,7 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark"
-                                href="javascript:void(0)"><i class="ti-search"></i></a>
-                            <form class="app-search position-absolute">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
-                                    class="srh-btn"><i class="ti-close"></i></a>
-                            </form>
-                        </li>
+                        
                     </ul>
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
@@ -338,19 +332,12 @@
     <!--This page JavaScript -->
             <script src="{{ asset('dist/js/custom.min.js') }}" defer></script>
     <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
-    <!-- Charts js Files -->
-<script src="{{ asset('assets/libs/flot/excanvas.js') }}" defer></script>
-<script src="{{ asset('assets/libs/flot/formmuliple.js') }}" defer></script>
-<script src="{{ asset('assets/libs/flot/jquery.flot.js') }}" defer></script>
-<script src="{{ asset('assets/libs/flot/jqueryflot.pie.js') }}" defer></script>
-<script src="{{ asset('assets/libs/flot/jquery.flot.time.js') }}" defer></script>
-<script src="{{ asset('assets/libs/flot/jquery.flot.stack.js') }}" defer></script>
-<script src="{{ asset('assets/libs/flot/jquery.lot.crosshair.js') }}" defer></script>
-<script src="{{ asset('assets/libs/flot/jquery.flot.tooltip.min.js') }}" defer></script>
-<script src="{{ asset('dist/js/pages/chart/chart-page-init.js') }}" defer></script>
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script src="{{ asset('assets/extra-libs/DataTables/datatables.min.js') }}" defer></script>
 <script type="text/javascript"> 
-    $('#datatable').DataTable();
+$(document).ready(function() {
+    $('.datatable').dataTable();
+});
 </script>
 </body>
 

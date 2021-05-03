@@ -10,30 +10,37 @@ use Illuminate\Support\Facades\DB;
 class CategoryController extends Controller
 {
      public function registercategory(){
-		
-		return view('admin.category');
+		$item = false;
+		return view('admin.category',compact('item'));
 		
 	}
-
+ 
 	public function submitcategory(Request $arr){
-		
+		if(!isset($arr->id)) {
 		$this->validate($arr,[
 		
 	'uname'=>'required',
 	'ustatus'=>'required'	
 		]);
-		$emp = new categore;
+	}
+	if(isset($arr->id)) {
+			$id = $arr->id;
+			$emp = categore::find($id);
+		} else {
+			$emp = new categore;
+		}
+		
 		$emp->name = $arr->uname;
 		$emp->parent_id = $arr->uparent;
 		$emp->status = $arr->ustatus;
 		$emp->show_in_navigation = $arr->ushow_in_navigation;
 		$emp->is_featured = $arr->uis_featured;
 
-	$emp->save();
-	
-	
+	if($emp->save()){
+
    return redirect('admin/categore/view')->with('success','successfully'); 
 	}
+}
 	public function categoreview(){
 
 		$view= DB::table('categores')->get();
@@ -45,7 +52,7 @@ class CategoryController extends Controller
 	$id = $request->id;
 	$item = categore::where('id',$id)->first();
 	//dd($item);
-	return view('admin.categorie_edit',compact('item'));
+	return view('admin.category',compact('item','id'));
 }
 public function categorieupdates(Request $request)
 {

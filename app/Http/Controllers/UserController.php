@@ -5,18 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use App\helpers\helper;
 use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
 
     public function registeruser(){
-		
-		return view('admin.user');
+		$item = false;
+		return view('admin.user',compact('item'));
 		
 	}
 
 	public function submituser(Request $arr){
-		
+		if(!isset($arr->id)) {
 		$this->validate($arr,[
 		
 	'uname'=>'required',
@@ -26,17 +27,26 @@ class UserController extends Controller
 		
 		
 		]);
-		$emp = new User;
-		$emp->name = $arr->uname;
+	}
+		if(isset($arr->id)) {
+			$id = $arr->id;
+			$emp = User::find($id);
+		} else {
+			$emp = new User;
 		$emp->email = $arr->uemail;
+		}
+		
+		$emp->name = $arr->uname;
+
 		$emp->role_id = $arr->urole;
 		$emp->password = $arr->upassword;
 		
-	$emp->save();
+	if($emp->save()){
 	
 	
    return redirect('admin/user/view')->with('success','successfully'); 
 	}
+}
 public function userview(){
 
 		$view= DB::table('users')->get();
@@ -49,7 +59,7 @@ public function userview(){
 	$id = $request->id;
 	$item = User::where('id',$id)->first();
 	//dd($item);
-	return view('admin.user_edit',compact('item'));
+	return view('admin.user',compact('item','id'));
 }
 public function userupdates(Request $request)
 {
