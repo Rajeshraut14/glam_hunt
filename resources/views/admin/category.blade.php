@@ -39,8 +39,12 @@
                                         <label for="fname"
                                             class="col-sm-3 text-end control-label col-form-label">Parent Id</label>
                                         <div class="col-sm-9">
-                                            <input type="number"  name="uparent" class="form-control" id="fname"
-                                                placeholder="parent id" value="{{isset($item->parent_id) ? $item->parent_id : ''}}">
+                                            <select class="form-control" id="exampleFormControlSelect1">
+                                               <option value="">--parent--</option>
+                                               <option value="1">1</option> 
+                                               <option value="2">2</option>
+                                                 <option value="3">3</option>
+                                              </select>
                                         </div>
                                     </div>
                                       <div class="form-group row">

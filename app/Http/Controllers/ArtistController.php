@@ -93,5 +93,5 @@ public function delete($id){
 	DB::delete('delete from artists where id = ?',[$id]);
 		return redirect('/admin/artist')->with('success','update seccessfully');
 }
-	            
+	       //$user = DB::table('Users')->where('id', $->skill_id)->first();          
 }

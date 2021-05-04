@@ -19,4 +19,22 @@ function status($sta = ''){
 	];
 	return $sta ? $status[$sta] : $status;
 }
+
+function feature($feat = ''){
+
+	$feature = [
+    '1' =>'NO',
+   '2' =>'YES'
+	];
+	return $feat ? $feature[$feat] : $feature;
+}
+
+function navigaion($navigat = ''){
+
+	$navigaion=[
+    '1' =>'NO',
+    '2'=>'YES'
+     ];
+     	return $navigat ? $navigaion[$navigat] : $navigaion;
+}
 ?>

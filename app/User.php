@@ -36,4 +36,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+   // public function getCityNameAttribute(){
+        // $role_id = $this->role_id;
+       // $users = DB::table('users')->where('id', $role_id)->first();
+       // return $users ? $users->name : '';
+    //}
 }

@@ -76,5 +76,6 @@ public function categoridelete($id){
 		return redirect('/admin/categore/view')->with('success','update seccessfully');
 }
 
+
 }
 

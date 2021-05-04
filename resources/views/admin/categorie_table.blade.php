@@ -51,8 +51,8 @@
                                                 <td>{{$item->id}}</td>
                                                 <td>{{$item->name}}</td>
                                                  <td>{{$item->parent_id}}</td>
-                                                  <td>{{$item->show_in_navigation}}</td>
-                                                  <td>{{$item->is_featured}}</td>
+                                                  <td>{{navigaion($item->show_in_navigation)}}</td>
+                                                  <td>{{feature($item->is_featured)}}</td>
                                                  <td>{{status($item->status)}}</td>
                                                  <td><a class="btn btn-success" href="{{route('admin.categorieupdate',$item->id)}}"><i class="fa fa-edit"></i></a>
 

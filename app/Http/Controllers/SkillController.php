@@ -34,7 +34,7 @@ class SkillController extends Controller
 			$emp = new skill;
 		}
 		$emp->skill = $arr->uskill;
-		
+	
 	if($emp->save()){
 
    return redirect('admin/skillview')->with('success','successfully'); 

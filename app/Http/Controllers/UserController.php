@@ -39,7 +39,7 @@ class UserController extends Controller
 		$emp->name = $arr->uname;
 
 		$emp->role_id = $arr->urole;
-		$emp->password = $arr->upassword;
+		$emp->password =bcrypt($arr->upassword);
 		
 	if($emp->save()){
 	
@@ -68,7 +68,8 @@ public function userupdates(Request $request)
 	$user->name = $request->uname;
 		$user->email = $request->uemail;
 		$user->role_id = $request->urole;
-		$user->password = bcrypt($request->upassword);
+		$user->password = bcrypt($arr->upassword); //$request->upassword;
+		 
 		
 	if($user->save()){
       	return redirect('/admin/user/view')->with('success','update seccessfully');
@@ -81,4 +82,6 @@ public function userdelete($id){
 	DB::delete('delete from users where id = ?',[$id]);
 		return redirect('/admin/user/view')->with('success','update seccessfully');
      }
+
+     //$user = DB::table('Users')->where('id', $->skill_id)->first();
 }
