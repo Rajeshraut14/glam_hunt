@@ -40,10 +40,9 @@
                                             class="col-sm-3 text-end control-label col-form-label">Parent Id</label>
                                         <div class="col-sm-9">
                                             <select class="form-control" id="exampleFormControlSelect1">
-                                               <option value="">--parent--</option>
-                                               <option value="1">1</option> 
-                                               <option value="2">2</option>
-                                                 <option value="3">3</option>
+                                               @foreach($categore as $item)
+                                                 <option value="{{$item->id}}">{{$item->name}}</option>
+                                                 @endforeach
                                               </select>
                                         </div>
                                     </div>

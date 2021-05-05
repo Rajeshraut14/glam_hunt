@@ -10,8 +10,9 @@ use Illuminate\Support\Facades\DB;
 class CategoryController extends Controller
 {
      public function registercategory(){
+     	$categore = categore::get();
 		$item = false;
-		return view('admin.category',compact('item'));
+		return view('admin.category',compact('item'))->with('categore',$categore);
 		
 	}
  
